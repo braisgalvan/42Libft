@@ -6,7 +6,7 @@
 /*   By: bgalvan- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/24 17:43:19 by bgalvan-          #+#    #+#             */
-/*   Updated: 2020/02/29 11:43:03 by bgalvan-         ###   ########.fr       */
+/*   Updated: 2020/02/29 11:45:09 by bgalvan-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ char	*ft_itoa(int n)
 		nbr = -n;
 		len++;
 	}
-	if (!(str = malloc(sizeof(char) * (len + 1)))
+	if (!(str = malloc(sizeof(char) * (len + 1))))
 		return (NULL);
 	str[--len] = '\0';
 	str[--len] = nbr % 10 + '0';
