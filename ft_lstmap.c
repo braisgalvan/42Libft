@@ -1,27 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bgalvan- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/21 15:24:45 by bgalvan-          #+#    #+#             */
-/*   Updated: 2020/03/01 14:01:23 by bgalvan-         ###   ########.fr       */
+/*   Created: 2020/02/29 12:16:18 by bgalvan-          #+#    #+#             */
+/*   Updated: 2020/02/29 16:15:53 by bgalvan-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memcpy(void *dst, const void *src, size_t n)
+t_list	*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem))
 {
-	char	*s1;
-	char	*s2;
-
-	if (dst == NULL && src == NULL)
-		return (NULL);
-	s1 = (char *)dst;
-	s2 = (char *)src;
-	while (n--)
-		*s1++ = *s2++;
-	return (dst);
+	return ((f)(lst));
 }

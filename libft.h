@@ -6,7 +6,7 @@
 /*   By: bgalvan- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/19 10:29:07 by bgalvan-          #+#    #+#             */
-/*   Updated: 2020/02/28 17:15:00 by bgalvan-         ###   ########.fr       */
+/*   Updated: 2020/03/01 14:38:40 by bgalvan-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ void				ft_putnbr_fd(int n, int fd);
 int					ft_atoi(char *str);
 int					ft_isdigit(int c);
 int					ft_isalpha(int c);
-int					ft_strlen(const char *str);
+size_t				ft_strlen(const char *str);
 int					ft_strcmp(const char *s1, const char *s2);
 int					ft_strncmp(const char *s1, const char *s2, size_t n);
 char				*ft_strcpy(char *dst, const char *src);
@@ -84,7 +84,14 @@ char				*ft_strtrim(char const *s);
 char				**ft_strsplit(char const *s, char c);
 t_list				*ft_lstnew(void const *content, size_t content_size);
 void				ft_lstdelone(t_list **alst, void (*del)(void *, size_t));
-
+char				*ft_strndup(const char *s1, size_t n);
+size_t				ft_strlcpy(char *dst, const char *src, size_t dstsize);
+/*
+void				ft_lstdel(t_list **alst, void (*del)(void *, size_t));
+*/
+void				ft_lstadd(t_list **alst, t_list *new);
+void				ft_lstiter(t_list *lst, void (*f)(t_list *elem));
+t_list				*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 char				**ft_split(char const *s, char c);
 char				*ft_substr(char const *s, unsigned int start, size_t len);
 
