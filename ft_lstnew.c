@@ -6,7 +6,7 @@
 /*   By: bgalvan- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/28 17:16:20 by bgalvan-          #+#    #+#             */
-/*   Updated: 2020/02/28 17:18:25 by bgalvan-         ###   ########.fr       */
+/*   Updated: 2020/03/02 11:22:54 by bgalvan-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,22 +14,22 @@
 
 t_list	*ft_lstnew(void const *content, size_t content_size)
 {
-	t_list *list;
+	t_list	*new;
 
-	if (!(list = (t_list *)malloc(sizeof(*list))))
+	if (!(new = (t_list *)ft_memalloc(sizeof(t_list))))
 		return (NULL);
-	if (content == NULL)
+	if (!content)
 	{
-		list->content = NULL;
-		list->content_size = 0;
+		new->content = NULL;
+		new->content_size = 0;
 	}
 	else
 	{
-		if (!(list->content = malloc(content_size)))
+		if (!(new->content = (void *)ft_memalloc(content_size)))
 			return (NULL);
-		ft_memcpy(list->content, content, content_size);
-		list->content_size = content_size;
+		ft_memcpy(new->content, content, content_size);
+		new->content_size = content_size;
 	}
-	list->next = NULL;
-	return (list);
+	new->next = NULL;
+	return (new);
 }

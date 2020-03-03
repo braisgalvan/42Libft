@@ -6,7 +6,7 @@
 /*   By: bgalvan- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/29 12:14:44 by bgalvan-          #+#    #+#             */
-/*   Updated: 2020/02/29 16:43:06 by bgalvan-         ###   ########.fr       */
+/*   Updated: 2020/03/02 11:18:53 by bgalvan-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,7 @@ void	ft_lstiter(t_list *lst, void (*f)(t_list *elem))
 {
 	while (lst)
 	{
-		if (lst->next)
-			lst = lst->next;
 		(f)(lst);
+		lst = lst->next;
 	}
 }

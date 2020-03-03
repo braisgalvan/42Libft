@@ -6,17 +6,24 @@
 /*   By: bgalvan- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/19 16:26:01 by bgalvan-          #+#    #+#             */
-/*   Updated: 2020/02/28 17:12:34 by bgalvan-         ###   ########.fr       */
+/*   Updated: 2020/03/02 14:35:34 by bgalvan-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_atoi(char *str)
+static int	ft_checker(long int n)
 {
-	int i;
-	int flag;
-	int result;
+	if (n < 0)
+		return (1);
+	return (0);
+}
+
+int			ft_atoi(char *str)
+{
+	int			i;
+	int			flag;
+	long int	result;
 
 	i = 0;
 	flag = 1;
@@ -32,6 +39,10 @@ int		ft_atoi(char *str)
 	while (ft_isdigit(str[i]))
 	{
 		result = result * 10 + (str[i] - '0');
+		if (ft_checker(result) && flag == -1)
+			return (0);
+		else if (ft_checker(result))
+			return (-1);
 		i++;
 	}
 	return (result * flag);
