@@ -6,7 +6,7 @@
 /*   By: bgalvan- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/19 10:29:07 by bgalvan-          #+#    #+#             */
-/*   Updated: 2020/03/02 14:33:11 by bgalvan-         ###   ########.fr       */
+/*   Updated: 2020/03/05 16:59:34 by bgalvan-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,6 @@
 # define LIBFT_H
 
 # include <string.h>
-# include <unistd.h>
-# include <stdlib.h>
 
 /*
 ** Linked List Structure
@@ -59,7 +57,7 @@ int					ft_strncmp(const char *s1, const char *s2, size_t n);
 /*
 **  --- Other functions ---
 */
-int					ft_atoi(char *str);
+int					ft_atoi(const char *str);
 int					ft_isalpha(int c);
 int					ft_isdigit(int c);
 int					ft_isalnum(int c);
@@ -116,7 +114,7 @@ t_list				*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 /*
 ** --------------- MORE FUNCTIONS ---------------
 */
-int					ft_isspace(char c);
+int					ft_isspace(int c);
 int					ft_islower(int c);
 int					ft_isupper(int c);
 void				*ft_calloc(size_t count, size_t size);
@@ -124,6 +122,9 @@ void				*ft_memrcpy(void *dst, const void *src, size_t n);
 char				*ft_strndup(const char *s1, size_t n);
 size_t				ft_strlcpy(char *dst, const char *src, size_t dstsize);
 int					ft_wordcount(const char *s, char c);
+int					ft_atoi_base(const char *n, int base);
+char				*ft_itoa_base(int n, int base);
+int					ft_numlen_base(int n, int base);
 /*
 **  --- Testing Functions ---
 */

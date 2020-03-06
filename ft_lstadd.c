@@ -6,7 +6,7 @@
 /*   By: bgalvan- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/29 12:13:48 by bgalvan-          #+#    #+#             */
-/*   Updated: 2020/03/02 11:18:25 by bgalvan-         ###   ########.fr       */
+/*   Updated: 2020/03/04 11:56:43 by bgalvan-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,9 @@
 
 void	ft_lstadd(t_list **alst, t_list *new)
 {
-	new->next = *alst;
+	t_list *tmp;
+
+	tmp = *alst;
+	new->next = tmp;
+	*alst = new;
 }

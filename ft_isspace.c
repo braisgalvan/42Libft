@@ -6,13 +6,13 @@
 /*   By: bgalvan- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/19 20:34:37 by bgalvan-          #+#    #+#             */
-/*   Updated: 2020/02/19 20:46:03 by bgalvan-         ###   ########.fr       */
+/*   Updated: 2020/03/05 16:59:14 by bgalvan-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_isspace(char c)
+int		ft_isspace(int c)
 {
 	return (c == '\t' || c == '\n' || c == '\v' || c == '\f' || c == '\r'
 			|| c == ' ');

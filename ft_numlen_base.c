@@ -1,27 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcpy.c                                        :+:      :+:    :+:   */
+/*   ft_numlen_base.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bgalvan- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/19 16:23:28 by bgalvan-          #+#    #+#             */
-/*   Updated: 2020/03/02 18:08:27 by bgalvan-         ###   ########.fr       */
+/*   Created: 2020/03/03 20:30:12 by bgalvan-          #+#    #+#             */
+/*   Updated: 2020/03/04 15:58:35 by bgalvan-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strcpy(char *dst, const char *src)
+int	ft_numlen_base(int n, int base)
 {
 	int i;
 
-	i = 0;
-	while (src[i])
-	{
-		dst[i] = src[i];
+	i = 1;
+	if (n < 0 && base == 10)
 		i++;
-	}
-	dst[i] = '\0';
-	return (dst);
+	while (n /= base)
+		i++;
+	return (i);
 }

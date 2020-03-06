@@ -6,44 +6,13 @@
 /*   By: bgalvan- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/19 16:26:01 by bgalvan-          #+#    #+#             */
-/*   Updated: 2020/03/02 14:35:34 by bgalvan-         ###   ########.fr       */
+/*   Updated: 2020/03/03 22:28:31 by bgalvan-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	ft_checker(long int n)
+int			ft_atoi(const char *str)
 {
-	if (n < 0)
-		return (1);
-	return (0);
-}
-
-int			ft_atoi(char *str)
-{
-	int			i;
-	int			flag;
-	long int	result;
-
-	i = 0;
-	flag = 1;
-	result = 0;
-	while (ft_isspace(str[i]))
-		i++;
-	if (str[i] == '-' || str[i] == '+')
-	{
-		if (str[i] == '-')
-			flag = -1;
-		i++;
-	}
-	while (ft_isdigit(str[i]))
-	{
-		result = result * 10 + (str[i] - '0');
-		if (ft_checker(result) && flag == -1)
-			return (0);
-		else if (ft_checker(result))
-			return (-1);
-		i++;
-	}
-	return (result * flag);
+	return (ft_atoi_base(str, 10));
 }

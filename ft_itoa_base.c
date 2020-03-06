@@ -1,34 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strmap.c                                        :+:      :+:    :+:   */
+/*   ft_itoa_base.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bgalvan- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/23 16:18:09 by bgalvan-          #+#    #+#             */
-/*   Updated: 2020/03/05 17:10:04 by bgalvan-         ###   ########.fr       */
+/*   Created: 2020/03/03 20:24:23 by bgalvan-          #+#    #+#             */
+/*   Updated: 2020/03/04 15:59:38 by bgalvan-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdlib.h>
 
-char	*ft_strmap(char const *s, char (*f)(char))
+char	*ft_itoa_base(int n, int base)
 {
-	int		i;
-	char	*ptr;
+	char			*str;
+	int				len;
+	unsigned int	nbr;
 
-	if (!s || !s)
+	len = ft_numlen_base(n, base);
+	nbr = n;
+	if (n < 0)
+		nbr = -n;
+	if (!(str = ft_memalloc(sizeof(char) * (len + 1))))
 		return (NULL);
-	i = 0;
-	if (!(ptr = malloc(sizeof(char) * ft_strlen((char *)s) + 1)))
-		return (NULL);
-	while (*s)
+	if (nbr == 0)
+		str[--len] = '0';
+	while (nbr)
 	{
-		ptr[i] = f(*(char *)s);
-		i++;
-		s++;
+		if (nbr % base >= 10)
+			str[--len] = (nbr % base) + 'A' - 10;
+		else
+			str[--len] = (nbr % base) + '0';
+		nbr /= base;
 	}
-	ptr[i] = '\0';
-	return (ptr);
+	if (n < 0 && base == 10)
+		str[--len] = '-';
+	return (str);
 }

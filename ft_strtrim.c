@@ -6,11 +6,12 @@
 /*   By: bgalvan- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/24 08:40:42 by bgalvan-          #+#    #+#             */
-/*   Updated: 2020/02/28 17:11:10 by bgalvan-         ###   ########.fr       */
+/*   Updated: 2020/03/05 17:09:43 by bgalvan-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdlib.h>
 
 char	*ft_strtrim(char const *s)
 {

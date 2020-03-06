@@ -6,21 +6,11 @@
 /*   By: bgalvan- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/24 17:43:19 by bgalvan-          #+#    #+#             */
-/*   Updated: 2020/03/02 14:01:08 by bgalvan-         ###   ########.fr       */
+/*   Updated: 2020/03/03 22:32:53 by bgalvan-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-static int	get_len(int n)
-{
-	int i;
-
-	i = 1;
-	while (n /= 10)
-		i++;
-	return (i);
-}
 
 char		*ft_itoa(int n)
 {
@@ -28,13 +18,10 @@ char		*ft_itoa(int n)
 	int				len;
 	unsigned int	nbr;
 
-	len = get_len(n);
+	len = ft_numlen_base(n, 10);
 	nbr = n;
 	if (n < 0)
-	{
 		nbr = -n;
-		len++;
-	}
 	if (!(str = ft_memalloc(sizeof(char) * (len + 1))))
 		return (NULL);
 	str[--len] = nbr % 10 + '0';
